@@ -1,11 +1,9 @@
-# 11:40 - Article CRUD
-
 class PostsController < ApplicationController
 
 	before_action :get_post, except: [:index, :create]
 
   def index
-  	@posts = Post.all
+  	@posts = Post.order("created_at desc")
   end
 
   def show
@@ -46,5 +44,8 @@ class PostsController < ApplicationController
 
   	def get_post
   		@post = params[:id] ? Post.find(params[:id]) : Post.new
+
+      rescue ActiveRecord::RecordNotFound
+        redirect_to(root_url, :notice => 'Record not found')
   	end
 end
