@@ -10,7 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'pyments.rb', '~> 0.6.3'
+gem 'pygments.rb', '~> 0.6.3'
 gem 'redcarpet', '~> 3.3.2'
 
 group :development, :test do
