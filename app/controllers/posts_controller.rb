@@ -39,11 +39,11 @@ class PostsController < ApplicationController
 
   private #-
   	def post_params
-  		params.require(:post).permit(:title, :content)
+  		params.require(:post).permit(:title, :content, :slug)
   	end
 
   	def get_post
-  		@post = params[:id] ? Post.find(params[:id]) : Post.new
+  		@post = params[:id] ? Post.friendly.find(params[:id]) : Post.new
 
       rescue ActiveRecord::RecordNotFound
         redirect_to(root_url, :notice => 'Record not found')
