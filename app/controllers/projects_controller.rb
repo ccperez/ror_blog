@@ -2,7 +2,7 @@ class ProjectsController < ApplicationController
   before_action :get_project, except: [:index, :create]
 
   def index
-  	@project = Project.order("created_at desc")
+  	@projects = Project.order("created_at desc")
   end
 
   def show
