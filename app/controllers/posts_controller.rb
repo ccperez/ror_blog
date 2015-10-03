@@ -7,6 +7,7 @@ class PostsController < ApplicationController
   end
 
   def show
+    redirect_to @post, status: :moved_permanently if request.path != post_path(@post)
   end
 
   def new
@@ -43,9 +44,6 @@ class PostsController < ApplicationController
   	end
 
   	def get_post
-  		@post = params[:id] ? Post.friendly.find(params[:id]) : Post.new
-
-      rescue ActiveRecord::RecordNotFound
-        redirect_to(root_url, :notice => 'Record not found')
+      @post = get_object(params[:id], Post)
   	end
 end

@@ -1,0 +1,17 @@
+<%= form_for @project do |f| %>
+	<%= error_messages_for(@project) %>
+
+	<%= f.label :title %><br>
+	<%= f.text_field :title %><br>
+	<br><br>
+
+	<%= f.label :description %><br>
+	<%= f.text_area :description %><br>
+	<br><br>
+
+	<%= f.label :link %><br>
+	<%= f.text_field :link %><br>
+	<br><br>
+
+	<%= f.submit "Submit" %>
+<% end %>

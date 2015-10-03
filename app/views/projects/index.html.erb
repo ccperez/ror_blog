@@ -1,0 +1,8 @@
+<h1 id="page_title">Stuff I've Built</h1>
+
+<div class="posts_wrapper" id="skinny_wrapper">
+	<div class="post">
+		<p id="date"><%= @project.created_at.strftime('%A %B %d') %></p>
+		<h2><%= link_to project_path, project %></h2>
+	</div>
+</div>

@@ -4,6 +4,7 @@ module ApplicationHelper
       Pygments.highlight(code, lexer: language)
     end
   end
+
 	def markdown(content)
 		renderer = HTMLwithPygments.new(hard_wrap: true, filter_html: true)
 		options = {
@@ -17,4 +18,12 @@ module ApplicationHelper
 		}
 		Redcarpet::Markdown.new(renderer, options).render(content).html_safe
 	end
+
+  def error_messages_for( object )
+    render(
+      :partial  => 'common/error_messages',
+      :locals   => { :object => object }
+    )
+  end
+  
 end
