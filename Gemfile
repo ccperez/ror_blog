@@ -13,6 +13,7 @@ gem 'pygments.rb', '~> 0.6.3'
 gem 'redcarpet', '~> 3.3.2'
 gem 'friendly_id', '~> 5.1.0'
 gem 'will_paginate', '~> 3.0.7'
+gem 'mail_form', '~> 1.5.1'
 
 gem 'hirb', '~> 0.7.3'
 
