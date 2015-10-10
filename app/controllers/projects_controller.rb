@@ -1,4 +1,3 @@
-# 6:27
 class ProjectsController < ApplicationController
   before_action :get_project, except: [:index, :create]
   before_action :authenticate_user!, except: [:index, :show]

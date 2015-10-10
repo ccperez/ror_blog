@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
   resources :posts, :projects
   resources :contacts, only: [:new, :create]
 
