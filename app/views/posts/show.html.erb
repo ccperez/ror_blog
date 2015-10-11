@@ -1,3 +1,4 @@
+# 15:41
 <div id="post_show_content" class="skinny_wrapper wrapper_padding">
 	<header>
 		<p class="date"><%= @post.created_at.strftime("%A, %b %d") %></p>
@@ -9,8 +10,12 @@
 		<%= markdown @post.content %>
 	</div>
 
-	<%= link_to "Edit Article", edit_post_path(@post) %>
-	<%= link_to "Delete Article", post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %>
+	<% if user_signed_in %>
+		<div id="admin_link">
+			<%= link_to "Edit Article", edit_post_path(@post) %>
+			<%= link_to "Delete Article", post_path(@post), method: :delete, data: { confirm: "Are you sure?" } %>
+		</div>
+	<% end %>
 
 	<hr>
 
